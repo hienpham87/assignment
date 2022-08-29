@@ -17,19 +17,16 @@ const Header = styled.div`
 
 const RightMenu = styled.div`
   display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 20px;
+  }
 `;
 function App() {
   const { token, currentUser } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log("token", token);
-
-  useEffect(() => {
-    if (!token && !["/login", "/register"].includes(location.pathname)) {
-      navigate("/login");
-    }
-  }, [token]);
 
   const logout = () => {
     dispatch(logoutAction());
@@ -40,13 +37,23 @@ function App() {
       <Header>
         <h1>Welcome to Funny Movies!</h1>
         <RightMenu>
-          {token && (
+          {token ? (
             <>
-              Welcome {currentUser?.username}
-              <button className="btn btn-primary" onClick={() => logout()}>
+              <span>Welcome {currentUser?.username}</span>
+              <button
+                className="btn btn-outline-primary"
+                onClick={() => logout()}
+              >
                 Logout
               </button>
             </>
+          ) : (
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
           )}
         </RightMenu>
       </Header>
