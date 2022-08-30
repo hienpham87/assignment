@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { logoutAction, selectUser } from "./app/components/user/userSlice";
 import styled from "styled-components";
+import { Movies } from "./app/components/movies/Movies";
 
 const Header = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ function App() {
         </RightMenu>
       </Header>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Movies />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>
