@@ -13,10 +13,6 @@ const Container = styled.div`
   box-shadow: 0 5px 20px 10px rgb(0 0 0 / 20%);
   overflow: hidden;
   margin-bottom: 20px;
-
-  & > video {
-    width: 360px;
-  }
 `;
 
 const Content = styled.div`
@@ -113,7 +109,7 @@ const Price = styled.div`
 `;
 
 export function MovieItem({ movieItem, vote }: any) {
-  const { id, name, tags, price, sharedBy, votedUp, votedDown } = movieItem;
+  const { id, name, tags, sharedBy, votedUp, votedDown } = movieItem;
   const { voteStatus } = vote || {};
   const { token } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
@@ -126,7 +122,7 @@ export function MovieItem({ movieItem, vote }: any) {
       <iframe
         width="420"
         height="300"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
+        src={`https://www.youtube.com/embed/${id}`}
       ></iframe>
       <Content>
         <MovieTitle>
@@ -203,7 +199,7 @@ export function MovieItem({ movieItem, vote }: any) {
           </MovieDetail>
         </MovieDetails>
       </Content>
-      <Price>${price}</Price>
+      <Price></Price>
     </Container>
   );
 }

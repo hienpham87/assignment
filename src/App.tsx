@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Login } from "./app/components/user/Login";
 import { Register } from "./app/components/Register";
-import { Home } from "./app/components/Home";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { logoutAction, selectUser } from "./app/components/user/userSlice";
 import styled from "styled-components";
 import { Movies } from "./app/components/movies/Movies";
+import { Share } from "./app/components/Share";
 
 const Header = styled.div`
   display: flex;
@@ -43,6 +43,12 @@ function App() {
               <span>Welcome {currentUser?.username}</span>
               <button
                 className="btn btn-outline-primary"
+                onClick={() => navigate("/share")}
+              >
+                Share a movie
+              </button>
+              <button
+                className="btn btn-outline-primary"
                 onClick={() => logout()}
               >
                 Logout
@@ -60,6 +66,7 @@ function App() {
       </Header>
       <Routes>
         <Route path="/" element={<Movies />} />
+        <Route path="share" element={<Share />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>

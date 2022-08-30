@@ -3,23 +3,21 @@ import movieReducer, { fetchMovieAction, MovieState } from "./movieSlice";
 
 const movies: Movie[] = [
   {
-    id: 1,
+    id: "tgbNymZ7vqY",
     name: "First Blood Part II",
     tags: ["#action"],
-    price: 12.5,
     sharedBy: "root@gmail.com",
     votedUp: 89,
     votedDown: 32,
   },
   {
-    id: 2,
+    id: "8IEezGQwgZk",
     name: "Tom and Jerry",
-    tags: ["#cartoon"],
-    price: 10.1,
+    tags: ["#music"],
     sharedBy: "root@gmail.com",
     votedUp: 12,
     votedDown: 3,
-  }
+  },
 ];
 
 describe("movie reducer", () => {
@@ -31,6 +29,7 @@ describe("movie reducer", () => {
   it("should handle initial state", () => {
     expect(movieReducer(undefined, { type: "unknown" })).toEqual({
       movies: [],
+      votes: [],
       isLoading: false,
     });
   });

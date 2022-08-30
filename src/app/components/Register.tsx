@@ -18,7 +18,6 @@ export function Register() {
 
   const signUp = async () => {
     const response = await signup(username, password);
-    console.log("response", response);
     setSuccess(true);
   };
 

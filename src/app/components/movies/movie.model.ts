@@ -1,14 +1,13 @@
 export interface Movie {
-    id: number,
+    id: string,
     name: string,
     tags: string[],
-    price: number,
     sharedBy: string,
     votedUp: number,
     votedDown: number
 }
 
 export interface Voted {
-    idMovie: number;
+    idMovie: string;
     voteStatus: string
 }
