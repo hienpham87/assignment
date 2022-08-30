@@ -24,7 +24,9 @@ export function Register() {
   return (
     <Container>
       {isSuccess ? (
-        <span>Your account is created success <a href="/login">sign in?</a></span>
+        <span>
+          Your account is created success <a href="/login">sign in?</a>
+        </span>
       ) : (
         <Form>
           <h3>Sign Up</h3>

@@ -82,18 +82,6 @@ const MovieDescription = styled.p`
   text-align: left;
 `;
 
-const MovieDetails = styled.div`
-  display: flex;
-  margin: auto;
-`;
-
-const MovieDetail = styled.div`
-  font-size: 13px;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-`;
-
 const Price = styled.div`
   background: linear-gradient(to bottom, #a9c9ff 0%, #ffbbec 100%);
   flex: 0 0 50px;
@@ -178,26 +166,6 @@ export function MovieItem({ movieItem, vote }: any) {
           and co-written by Sylvester Stallone, who also stars as Vietnam War
           veteran John Rambo.
         </MovieDescription>
-        <MovieDetails>
-          <MovieDetail>
-            <span className="icons icons-red">
-              <i className="fas fa-camera-retro"></i>{" "}
-            </span>
-            Buzz Feitshans
-          </MovieDetail>
-          <MovieDetail>
-            <span className="icons icons-grey">
-              <i className="fas fa-clock"></i>{" "}
-            </span>
-            1h 33m
-          </MovieDetail>
-          <MovieDetail>
-            <span className="icons icons-yellow">
-              <i className="fas fa-file-invoice-dollar"></i>
-            </span>
-            $12.52 crores
-          </MovieDetail>
-        </MovieDetails>
       </Content>
       <Price></Price>
     </Container>

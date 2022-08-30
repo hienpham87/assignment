@@ -21,7 +21,11 @@ export function Movies() {
   return (
     <Container>
       {movies.map((movie) => (
-        <MovieItem key={movie.id} movieItem={movie} vote={votes.find(vote => vote.idMovie === movie.id)}/>
+        <MovieItem
+          key={movie.id}
+          movieItem={movie}
+          vote={votes.find((vote) => vote.idMovie === movie.id)}
+        />
       ))}
     </Container>
   );
