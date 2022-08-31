@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Login } from "./app/components/user/Login";
 import { Register } from "./app/components/Register";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +28,8 @@ function App() {
   const { token, currentUser } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log("location", location);
 
   const logout = () => {
     dispatch(logoutAction());
@@ -41,12 +43,21 @@ function App() {
           {token ? (
             <>
               <span>Welcome {currentUser?.username}</span>
-              <button
-                className="btn btn-outline-primary"
-                onClick={() => navigate("/share")}
-              >
-                Share a movie
-              </button>
+              {location.pathname === "/share" ? (
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={() => navigate("/")}
+                >
+                  Home
+                </button>
+              ) : (
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={() => navigate("/share")}
+                >
+                  Share a movie
+                </button>
+              )}
               <button
                 className="btn btn-outline-primary"
                 onClick={() => logout()}
