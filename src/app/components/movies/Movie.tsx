@@ -31,6 +31,10 @@ const MovieTitle = styled.div`
     font-size: 16px;
     margin-right: auto;
     color: royalblue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 215px;
   }
 `;
 
@@ -116,7 +120,6 @@ export function MovieItem({ movieItem, vote }: any) {
         <MovieTitle>
           <span>
             {name}
-            <i className="fas fa-fire"></i>
           </span>
           {tags.map((tag: string) => (
             <MovieTag>{tag}</MovieTag>

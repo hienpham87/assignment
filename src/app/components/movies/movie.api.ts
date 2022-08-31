@@ -6,7 +6,6 @@ import { BASE_URL } from "../../utils";
 
 export const fetchMovie = async () => {
   const response = await axios.get<Movie[]>(`${BASE_URL}/api/movie/`);
-  console.log("response", response.data);
   return response.data;
 };
 
