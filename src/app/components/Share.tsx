@@ -55,7 +55,7 @@ export function Share() {
         </div>
         <div className="d-grid">
           <button
-            type="submit"
+            type="button"
             className="btn btn-primary"
             onClick={() => {
               dispatch(

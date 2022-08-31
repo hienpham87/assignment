@@ -72,7 +72,7 @@ export function Login() {
         </div>
         <div className="d-grid">
           <button
-            type="submit"
+            type="button"
             className="btn btn-primary"
             onClick={() => login()}
           >

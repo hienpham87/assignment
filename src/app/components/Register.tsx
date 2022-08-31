@@ -17,7 +17,7 @@ export function Register() {
   const [isSuccess, setSuccess] = useState(false);
 
   const signUp = async () => {
-    const response = await signup(username, password);
+    await signup(username, password);
     setSuccess(true);
   };
 
@@ -66,7 +66,7 @@ export function Register() {
           </div>
           <div className="d-grid">
             <button
-              type="submit"
+              type="button"
               className="btn btn-primary"
               onClick={() => signUp()}
             >

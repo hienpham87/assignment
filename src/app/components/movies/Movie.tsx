@@ -106,7 +106,7 @@ export function MovieItem({ movieItem, vote }: any) {
   const isVotedDown = voteStatus === "votedDown";
 
   return (
-    <Container>
+    <Container className="movieItem">
       <iframe
         width="420"
         height="300"
