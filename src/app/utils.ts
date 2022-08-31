@@ -1,1 +1,1 @@
-export const BASE_URL = "https://express-deploy.vercel.app/"
+export const BASE_URL = "https://express-deploy.vercel.app"
