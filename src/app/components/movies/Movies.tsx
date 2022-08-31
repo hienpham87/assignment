@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 export function Movies() {
-  const { movies, votes, isLoading } = useAppSelector(selectMovies);
+  const { movies, votes } = useAppSelector(selectMovies);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

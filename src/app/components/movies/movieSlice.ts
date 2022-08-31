@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { idText } from "typescript";
-import { RootState, AppThunk } from "../../../app/store";
+import { RootState } from "../../../app/store";
 import { fetchMovie, shareMovie } from "./movie.api";
 import { Movie, Voted } from "./movie.model";
 
